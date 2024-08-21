@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>signup</title>
+  </head>
+  <body>
+    <h1>Sign Up</h1>
+
+    {% if error %}
+    <br />
+    <p>{{ error }}</p>
+    <br />
+    {% endif %}
+
+    <form method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit">Sign Up</button>
+    </form>
+
+    <br />
+    <br />
+    <span><a href="{% url 'login' %}">login</a></span>
+    <br />
+    <br />
+    <p>
+      We have Rooms from 1 to 50 <br />
+      Rooms are divided to four types: <br />
+      1. VIP [46 : 50] (Stunning panoramic views of the city skyline)<br />
+      2. Executive Quarters [36 : 45] (Convenient city views )<br />
+      3. Standard Stays [11 : 35] (Standard courtyard scenes for a comfortable
+      stay.)<br />
+      4. Economy Lodgings [1 : 10] (Parking lot views for a budget-friendly
+      option.)<br />
+    </p>
+  </body>
+</html>

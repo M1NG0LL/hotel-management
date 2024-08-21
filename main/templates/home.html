@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+  </head>
+  <body>
+    <h1>Home</h1>
+
+    {% if guest %}
+    <h2>Welcome Mr. {{ guest.name| capfirst }}</h2>
+    <br />
+    <span
+      ><a href="{% url 'logout'  room_number=guest.room_number %}"
+        >Logout</a
+      ></span
+    >
+    {% else %}
+    <p>You are not logged in.</p>
+    {% endif %}
+  </body>
+</html>
